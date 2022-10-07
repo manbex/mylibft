@@ -12,6 +12,7 @@
 
 #ifndef LIBFT_H
 # define LIBFT_H
+# define BUFFER_SIZE 4096
 
 # if defined (__APPLE__)
 #  define PTR_NULL "0x0"
@@ -88,6 +89,7 @@ int		print_id(va_list ptr);
 int		print_u(va_list ptr);
 int		print_x(va_list ptr, char c);
 int		print_p(va_list ptr);
-
+void	*ft_free(void *ptr);
+int	get_next_line(int fd, char **str);
 
 #endif

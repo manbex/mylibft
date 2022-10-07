@@ -1,7 +1,6 @@
 NAME = libft.a
 
 SRC_DIR = srcs/
-BONUS_DIR = bonus/
 
 CC = gcc
 CFLAGS = -c -Wall -Wextra -Werror -Iincludes
@@ -42,42 +41,37 @@ SRC = ft_isalpha.c\
       ft_putendl.c\
       ft_putnbr.c\
       ft_superatoi.c\
-	  ft_printf.c\
-	  print_c.c\
-	  print_id.c\
-	  print_p.c\
-	  print_s.c\
-	  print_u.c\
-	  print_x.c\
-
-BONUS = ft_lstnew.c\
-	ft_lstadd_front.c\
-	ft_lstadd_back.c\
-	ft_lstsize.c\
-	ft_lstlast.c\
-	ft_lstdelone.c\
-	ft_lstclear.c\
-	ft_lstiter.c\
-	ft_lstmap.c\
+      ft_printf.c\
+      print_c.c\
+      print_id.c\
+      print_p.c\
+      print_s.c\
+      print_u.c\
+      print_x.c\
+      get_next_line.c\
+      ft_lstnew.c\
+      ft_lstadd_front.c\
+      ft_lstadd_back.c\
+      ft_lstsize.c\
+      ft_lstlast.c\
+      ft_lstdelone.c\
+      ft_lstclear.c\
+      ft_lstiter.c\
+      ft_lstmap.c\
 
 OBJ = $(addprefix $(SRC_DIR), $(SRC:.c=.o))
-
-BONUS_OBJ = $(addprefix $(BONUS_DIR), $(BONUS:.c=.o))
 
 $(NAME): $(OBJ)
 	ar rcs $@ $(OBJ)
 
 all: $(NAME)
 
-bonus : $(BONUS_OBJ)
-	ar rcs $(NAME) $(BONUS_OBJ)
-
 clean:
-	$(RM) $(OBJ) $(BONUS_OBJ)
+	$(RM) $(OBJ)
 
 fclean: clean
 	$(RM) $(NAME)
 
 re: fclean $(NAME)
 
-.PHONY: all clean fclean re bonus
+.PHONY: all clean fclean re
