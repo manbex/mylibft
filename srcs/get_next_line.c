@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-char	*ft_customjoin(char *s1, char *s2)
+static char	*ft_customjoin(char *s1, char *s2)
 {
 	char	*str;
 	size_t	size;
@@ -41,7 +41,7 @@ char	*ft_customjoin(char *s1, char *s2)
 	return (free(s1), str);
 }
 
-int	ft_have_newline(char *str)
+static int	ft_have_newline(char *str)
 {
 	size_t	i;
 
@@ -56,7 +56,7 @@ int	ft_have_newline(char *str)
 	return (0);
 }
 
-int	get_line(char *stash, char **line)
+static int	get_line(char *stash, char **line)
 {
 	char	*str;
 	int		size;
@@ -82,7 +82,7 @@ int	get_line(char *stash, char **line)
 	return (*line = str, 0);
 }
 
-int	get_stash(char **stash, char **str)
+static int	get_stash(char **stash, char **str)
 {
 	char	*new;
 	size_t	i;
@@ -93,7 +93,7 @@ int	get_stash(char **stash, char **str)
 	j = 0;
 	size = 0;
 	if (!*stash)
-		return (1);
+		return (0);
 	while ((*stash)[i] && (*stash)[i] != '\n')
 		i++;
 	if ((*stash)[i] == '\n')
